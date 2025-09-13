@@ -1,0 +1,27 @@
+digraph ANN_RAG {
+	rankdir=LR size="12,8"
+	node [fontname=Arial fontsize=12]
+	edge [fontname=Arial fontsize=10]
+	docs [label="📄 Source Documents
+(.txt, .pdf, YouTube)" fillcolor=lightblue fontsize=14 shape=folder style=filled]
+	split [label="✂️ Text Splitter
+(Character/Semantic)" fillcolor=lightgrey fontsize=14 shape=box style="rounded,filled"]
+	embed [label="🔢 Embedding Model
+(text-embedding-3-small)" fillcolor=lightyellow fontsize=14 shape=ellipse style=filled]
+	ann [label="🗄️ ANN Vector Database
+(FAISS / Annoy)" fillcolor=lightgreen fontsize=14 shape=cylinder style=filled]
+	query [label="❓ User Query" fillcolor=orange fontsize=14 shape=note style=filled]
+	retrieval [label="🔍 ANN Search
+(Approximate kNN)" fillcolor=lightpink fontsize=14 shape=diamond style=filled]
+	llm [label="🤖 LLM
+(ChatOpenAI)" fillcolor=lightgoldenrod fontsize=14 shape=ellipse style=filled]
+	answer [label="💡 Final Answer" fillcolor=lightcyan fontsize=14 shape=box style="rounded,filled"]
+	docs -> split [label="chunk documents" fontsize=10]
+	split -> embed [label="generate embeddings" fontsize=10]
+	embed -> ann [label="store vectors" fontsize=10]
+	query -> embed [label="embed query" fontsize=10]
+	embed -> retrieval [label="query vector" fontsize=10]
+	ann -> retrieval [label="ANN search" fontsize=10]
+	retrieval -> llm [label="context + query" fontsize=10]
+	llm -> answer [label="generate response" fontsize=10]
+}
