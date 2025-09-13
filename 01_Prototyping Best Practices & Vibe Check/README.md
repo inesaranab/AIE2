@@ -37,15 +37,98 @@ You will be required to submit a link to your GitHub, as well as screenshots of 
 Please evaluate your system on the following questions:
 
 1. Explain the concept of object-oriented programming in simple terms to a complete beginner. 
-    - Aspect Tested:
+   - **Aspect Tested:** Beginner-friendly explanation of a technical concept (clarity, accuracy, minimal jargon, structure).  
+   - **System Performance:** **Strong (4.5/5).**  
+
+**What worked:**  
+- Clear household analogy (boxes).  
+- Correct explanation of objects, attributes, methods, and classes.  
+- Nicely structured with numbered points.  
+- Includes a “why use it” section.  
+
+**Minor gaps:**  
+- No explicit note that *attributes = data, methods = actions*.  
+- Doesn’t clearly show an **instance** of a class (e.g., `Dog` → `Fido`).  
+
+**Formatting issues:**  
+- Nested bullets (`- Attributes`, `- Methods`) look visually disconnected.  
+- Bold/italics mix (`**Objects:**`, `**methods**`) is visually noisy.  
+ 
+    
+    
 2. Read the following paragraph and provide a concise summary of the key points…
-    - Aspect Tested:
+    - **Aspect Tested:** This question checks if the model can read a text, pick out the most important ideas, skip the extra details, and give back a short, clear summary without changing the meaning.  
+    - **System Performance:** **Mixed (3/5).**  
+
+**What worked:**  
+- Captured the main event (AI infrastructure deal in the UK).  
+- Correctly listed the main actors (Sam Altman, Jensen Huang, Trump, UK government).  
+- Included details on the role of OpenAI, Nvidia, and government support.  
+
+**Issues noticed:**  
+- Output is **too long and detailed** for a “concise summary”; it feels more like a structured outline.  
+- Added context not strictly required (e.g., ties to Trump, Stargate project) → makes it less concise.  
+- Markdown formatting (with `- **Who:**`, `- **What:**`) looks more like meeting notes than a true summary.  
+- Some phrasing could be tighter; the reader has to skim through too much information.  
+ 
+
 3. Write a short, imaginative story (100–150 words) about a robot finding friendship in an unexpected place.
-    - Aspect Tested:
+    - **Aspect Tested:** The model’s ability to generate creative writing with narrative structure, emotional depth, and appropriate length.  
+    - **System Performance:** **Very strong (4.5/5).**  
+
+**What worked:**  
+- Output length is well within range (approx. 140 words).  
+- Engaging narrative arc: setup (lonely robot), conflict (longing for connection), resolution (bond with kitten).  
+- Strong imagery (“dusty scrapyard,” “wires tangled,” “Spark’s purring filled the empty spaces”).  
+- Clear emotional tone and satisfying conclusion about unexpected friendship.  
+
+**Issues noticed:**  
+- Slightly heavy on descriptive adjectives; could be tighter.  
+- Feels polished but almost *too literary* compared to a “short imaginative story” — might overwhelm a beginner audience.  
+- Markdown formatting is just plain text; no paragraph spacing beyond line breaks, making it a bit blocky.  
+
+ 
+
 4. If a store sells apples in packs of 4 and oranges in packs of 3, how many packs of each do I need to buy to get exactly 12 apples and 9 oranges?
-    - Aspect Tested:
+    - **Aspect Tested:** The model’s ability to perform basic arithmetic reasoning, set up equations, and present a clear, concise solution.  
+    - **System Performance:** **Correct but overcomplicated (3.5/5).**  
+
+**What worked:**  
+- Answer is correct: 3 packs of apples, 3 packs of oranges.  
+- Shows logical reasoning by setting up equations.  
+
+**Issues noticed:**  
+- Output is overly long for such a simple problem.  
+- LaTeX formatting (`\frac{12}{4}`) was not rendered properly, which makes the text messy and harder to read.  
+- Too much step-by-step detail for a basic question; clarity is lost.  
+
+
 5. Rewrite the following paragraph in a professional, formal tone…
-    - Aspect Tested:
+   - **Aspect Tested:** The model’s ability to adapt writing style, transforming informal, jargon-filled text into professional, formal prose while preserving meaning.  
+   - **System Performance:** **Strong (4/5).**  
+
+**What worked:**  
+- Successfully shifted the tone from casual slang to professional and academic language.  
+- Preserved the key ideas: transformer models, large-scale data processing, cloud infrastructure, and common technical buzzwords.  
+- Structured into clear, flowing sentences suitable for a formal context.  
+
+**Issues noticed:**  
+- Output is slightly verbose, with long, dense sentences that could be streamlined.  
+- Some wording (“although the full complexity…”) adds unnecessary heaviness.  
+- Lost a bit of the original playfulness; while this was expected, a sharper, more concise professional rewrite would read better.  
+
+
+
+### Summary of Aspects Tested
+
+| Question | Skill Being Tested | Proposed Improvements |
+|----------|--------------------|------------------------|
+| Q1: Explain OOP | Explain technical concepts simply for beginners | Add clearer “attributes = data, methods = actions”; show an instance (e.g., Dog → Fido) |
+| Q2: Summarization | Read text, pick out key ideas, give short accurate summary | Make it shorter (3–4 sentences), avoid extra context, cleaner formatting |
+| Q3: Creative Story | Write imaginatively with a clear beginning, middle, and end | Simplify language slightly, reduce adjectives, improve paragraph spacing |
+| Q4: Math/Logic | Solve a simple problem with correct reasoning and clear answer | Skip LaTeX, give a plain-text step-by-step solution, keep it concise |
+| Q5: Style Rewriting | Rewrite informal/jargon text into professional, formal tone | Shorter sentences, avoid redundancy, keep meaning but streamline wording |
+ 
 
 This "vibe check" now serves as a baseline, of sorts, to help understand what holes your application has.
 
@@ -58,24 +141,26 @@ This "vibe check" now serves as a baseline, of sorts, to help understand what ho
 #### ❓Question #1:
 
 What are some limitations of vibe checking as an evaluation tool?
-##### ✅ Answer:
+##### ✅ Answer:##### ✅ Answer:  
+Vibe checking is quick and useful for spotting obvious failures, but it has clear limits. It only gives a surface-level impression and can miss deeper issues like bias, factual accuracy, or edge cases. Results are subjective, since different people may judge “good” output differently. It also doesn’t measure consistency across many examples, so it can’t replace more systematic testing or benchmarks.  
+
 
 ### 🚧 Advanced Build (OPTIONAL):
 
 Please make adjustments to your application that you believe will improve the vibe check you completed above, then deploy the changes to your Vercel domain [(see these instructions from your Challenge project)](https://github.com/AI-Maker-Space/The-AI-Engineer-Challenge/blob/main/README.md) and redo the above vibe check.
 
 > NOTE: You may reach for improving the model, changing the prompt, or any other method.
-
-#### 🏗️ Activity #1
+ #### 🏗️ Activity #1
 ##### Adjustments Made:
-- _describe adjustment(s) here_
+- Introduced a **system prompt** to enforce Markdown formatting, concise responses, and clear style guidelines.
+- Added **task-specific rules** for technical explanations, summaries, creative writing, math/logic, and professional rewriting.
 
-##### Results:
-1. _Comment here how the change(s) impacted the vibe check of your system_
-2. 
-3. 
-4. 
-5.
+##### Results:  
+1. **OOP Explanation:** Output became clearer and easier to skim, with better markdown formatting. Observations: the asisstant does not always follow the rules. Maybe the specific output must be enforced with an output parser. 
+2. **Summarization:** Improved conciseness. 
+3. **Creative Story:** Story remained imaginative but was more readable thanks to fewer adjectives and better paragraph spacing.  
+4. **Math/Logic:** Final answer was correct and much easier to read in plain text, without messy LaTeX symbols.  
+5. **Style Rewriting:** Professional rewrites were more precise and concise, avoiding overly dense phrasing.  
 
 
 ## Submitting Your Homework
