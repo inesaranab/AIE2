@@ -141,7 +141,7 @@ This "vibe check" now serves as a baseline, of sorts, to help understand what ho
 #### ❓Question #1:
 
 What are some limitations of vibe checking as an evaluation tool?
-##### ✅ Answer:##### ✅ Answer:  
+##### ✅ Answer: 
 Vibe checking is quick and useful for spotting obvious failures, but it has clear limits. It only gives a surface-level impression and can miss deeper issues like bias, factual accuracy, or edge cases. Results are subjective, since different people may judge “good” output differently. It also doesn’t measure consistency across many examples, so it can’t replace more systematic testing or benchmarks.  
 
 
